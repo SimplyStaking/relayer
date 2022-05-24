@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>Relayer</h1>
+  <h1>ICQ Enabled Relayer</h1>
 
 ![banner](./docs/images/comp.gif)
 
@@ -12,10 +12,11 @@
 [![Version](https://img.shields.io/github/tag/cosmos/relayer.svg?style=flat-square)](https://github.com/cosmos/relayer/latest)
 </div>
 
+**NOTE** This Relayer has not been audited for the updates that have been added to it to support [Interchain Queries](https://github.com/SimplyVC/interchainqueries).
+
 In IBC, blockchains do not directly pass messages to each other over the network. This is where `relayer` comes in. 
 A relayer process monitors for updates on opens paths between sets of [IBC](https://ibcprotocol.org/) enabled chains.
-The relayer submits these updates in the form of specific message types to the counterparty chain. Clients are then used to 
-track and verify the consensus state.
+The relayer submits these updates in the form of specific message types to the counterparty chain. Clients are then used to track and verify the consensus state.
 
 In addition to relaying packets, this relayer can open paths across chains, thus creating clients, connections and channels.
 
@@ -178,6 +179,16 @@ Additional information on how IBC works can be found [here](https://ibc.cosmos.n
    ```
    
    >Because two channels between chains are tightly coupled, there is no need to specify the dst channels.
+
+9. **Enable Interchainqueries for the relayer (OPTIONAL).**
+   To enable Interchainqueries for the specific path run the following command:
+   
+   ```shell
+   $ rly paths icq hubosmo true 10
+   ```
+
+   This will enable the relayer to query the ICQ module of the `cosmoshub-4` chain for pending queries that need to be answered from `osmosis-1`. The `10` in that command is a buffer to not attempt to answer pending queries which will expire within 10 blocks as the relayer will not have time to answer with a valid transaction.
+<br />
 
 10. **Finally, we start the relayer on the desired path.**
 

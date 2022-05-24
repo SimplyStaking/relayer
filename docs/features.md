@@ -11,6 +11,7 @@ The relayer supports the following:
 - sending an UpgradePlan proposal for an IBC breaking upgrade
 - upgrading clients after a counter-party chain has performed an upgrade for IBC breaking changes
 - fetching canonical chain and path metadata from the GitHub repo to quickly bootstrap a relayer instance
+- compatible with the icq module and can query a target chain free of charge apart from intial IBC connection tx fees
 
 The relayer currently cannot:
 
