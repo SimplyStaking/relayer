@@ -887,6 +887,8 @@ github.com/sergi/go-diff v1.1.0 h1:we8PVUC3FE2uYfodKH/nBHMSetSfHDR6scGdBi+erh0=
 github.com/sergi/go-diff v1.1.0/go.mod h1:STckp+ISIX8hZLjrqAeVduY0gWCT9IjLuqbuNXdaHfM=
 github.com/shirou/gopsutil v2.20.5+incompatible/go.mod h1:5b4v6he4MtMOwMlS0TUMTu2PcXUg8+E1lC7eC3UO/RA=
 github.com/shurcooL/sanitized_anchor_name v1.0.0/go.mod h1:1NzhyTcUVG4SuEtjjoZeVRXNmyL/1OwPU0+IJeTBvfc=
+github.com/simplyvc/Interchainqueries v0.0.0-20220525094226-7b35bef68b4d h1:Vv5PyooF4nNcj3ZZD+DJbtBzzkOHxg6a+s0ILta2J6A=
+github.com/simplyvc/Interchainqueries v0.0.0-20220525094226-7b35bef68b4d/go.mod h1:XDhkpjBQGhlIdVGFIH+pXE37nFNzM6cH+PHCIQ7bLGw=
 github.com/simplyvc/cosmos-detfs v0.0.0-20220404224224-058783bbb1f7 h1:nGj2Vsv/vhI0ExWZq6c+H9YOyle0LKS3/c94CKt6qC0=
 github.com/simplyvc/cosmos-detfs v0.0.0-20220404224224-058783bbb1f7/go.mod h1:d6rWMF2UJoASt1GrESDCBjBDsU4lQIgfmDN/45GzX1o=
 github.com/simplyvc/cosmos-detfs v0.0.0-20220406171939-2fafa7a71734 h1:qBtNnCghUZwNmUIB2gLnRUKtQLo8ZqgFmScvx8yI+Bw=
@@ -907,6 +909,8 @@ github.com/simplyvc/interchainqueries v0.0.0-20220520204536-e9b6c890e5eb h1:RsBb
 github.com/simplyvc/interchainqueries v0.0.0-20220520204536-e9b6c890e5eb/go.mod h1:bJFW2H0FOlu1XSB3S0zfPlXIOyhnYrdE7euUTUz9NOg=
 github.com/simplyvc/interchainqueries v0.0.0-20220523203529-8172d99eccfd h1:KyBAw39KzmlT4dKb2NXeXP8WErA8lSBwkjUHDlzQr9o=
 github.com/simplyvc/interchainqueries v0.0.0-20220523203529-8172d99eccfd/go.mod h1:mdIeKbzF8hyTUBPYAnGlqTe1ot+4gMphb+/xhBXVVNE=
+github.com/simplyvc/interchainqueries v0.0.0-20220525094226-7b35bef68b4d h1:skwzEAgzdsWrGgTspUQYb56HVKb+7JU3+EFKzPIz42Q=
+github.com/simplyvc/interchainqueries v0.0.0-20220525094226-7b35bef68b4d/go.mod h1:x/C8h1FWi6SqpAjorT0wDve4TB6ud7km8IUWijxTP2w=
 github.com/sirupsen/logrus v1.2.0/go.mod h1:LxeOpSwHxABJmUn/MG1IvRgCAasNZTLOkJPxbbu5VWo=
 github.com/sirupsen/logrus v1.4.1/go.mod h1:ni0Sbl8bgC9z8RoU9G6nDWqqs/fq4eDPysMBDgk/93Q=
 github.com/sirupsen/logrus v1.4.2/go.mod h1:tLMulIdttU9McNUspp0xgXVQah82FyeX6MwdIuYE2rE=
