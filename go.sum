@@ -911,6 +911,8 @@ github.com/simplyvc/interchainqueries v0.0.0-20220523203529-8172d99eccfd h1:KyBA
 github.com/simplyvc/interchainqueries v0.0.0-20220523203529-8172d99eccfd/go.mod h1:mdIeKbzF8hyTUBPYAnGlqTe1ot+4gMphb+/xhBXVVNE=
 github.com/simplyvc/interchainqueries v0.0.0-20220525094226-7b35bef68b4d h1:skwzEAgzdsWrGgTspUQYb56HVKb+7JU3+EFKzPIz42Q=
 github.com/simplyvc/interchainqueries v0.0.0-20220525094226-7b35bef68b4d/go.mod h1:x/C8h1FWi6SqpAjorT0wDve4TB6ud7km8IUWijxTP2w=
+github.com/simplyvc/interchainqueries v0.0.0-20220525181732-67dd18adc96f h1:FMrU4rAUdMnCPxjNMePt8gUvxJtfL7lmq/yHUXb3608=
+github.com/simplyvc/interchainqueries v0.0.0-20220525181732-67dd18adc96f/go.mod h1:mdIeKbzF8hyTUBPYAnGlqTe1ot+4gMphb+/xhBXVVNE=
 github.com/sirupsen/logrus v1.2.0/go.mod h1:LxeOpSwHxABJmUn/MG1IvRgCAasNZTLOkJPxbbu5VWo=
 github.com/sirupsen/logrus v1.4.1/go.mod h1:ni0Sbl8bgC9z8RoU9G6nDWqqs/fq4eDPysMBDgk/93Q=
 github.com/sirupsen/logrus v1.4.2/go.mod h1:tLMulIdttU9McNUspp0xgXVQah82FyeX6MwdIuYE2rE=

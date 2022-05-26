@@ -131,7 +131,7 @@ require (
 	github.com/sasha-s/go-deadlock v0.2.1-0.20190427202633-1595213edefa // indirect
 	github.com/sergi/go-diff v1.1.0 // indirect
 	github.com/simplyvc/Interchainqueries v0.0.0-20220525094226-7b35bef68b4d // indirect
-	github.com/simplyvc/interchainqueries v0.0.0-20220525094226-7b35bef68b4d // indirect
+	github.com/simplyvc/interchainqueries v0.0.0-20220525181732-67dd18adc96f // indirect
 	github.com/sirupsen/logrus v1.8.1 // indirect
 	github.com/spf13/afero v1.6.0 // indirect
 	github.com/spf13/cast v1.4.1 // indirect
