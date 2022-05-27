@@ -1014,7 +1014,6 @@ func (cc *CosmosProvider) MsgRelayInterchainqueryResult(ctx context.Context, src
 			QueryId:     query.Id,
 			Result:      res.Value,
 			Height:      &height,
-			ChainId:     query.ChainId,
 			Proof:       res.ProofOps,
 			PeriodicId:  query.PeriodicId,
 		}

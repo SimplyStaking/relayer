@@ -842,6 +842,8 @@ github.com/shirou/gopsutil v2.20.5+incompatible/go.mod h1:5b4v6he4MtMOwMlS0TUMTu
 github.com/shurcooL/sanitized_anchor_name v1.0.0/go.mod h1:1NzhyTcUVG4SuEtjjoZeVRXNmyL/1OwPU0+IJeTBvfc=
 github.com/simplyvc/interchainqueries v0.0.0-20220525181732-67dd18adc96f h1:FMrU4rAUdMnCPxjNMePt8gUvxJtfL7lmq/yHUXb3608=
 github.com/simplyvc/interchainqueries v0.0.0-20220525181732-67dd18adc96f/go.mod h1:mdIeKbzF8hyTUBPYAnGlqTe1ot+4gMphb+/xhBXVVNE=
+github.com/simplyvc/interchainqueries v0.0.0-20220527111731-a6537500f8a5 h1:tL8HkPUFe2JqT3DvTm/D0XCDIHa3UP17gVOJE4JS1Y8=
+github.com/simplyvc/interchainqueries v0.0.0-20220527111731-a6537500f8a5/go.mod h1:mdIeKbzF8hyTUBPYAnGlqTe1ot+4gMphb+/xhBXVVNE=
 github.com/sirupsen/logrus v1.2.0/go.mod h1:LxeOpSwHxABJmUn/MG1IvRgCAasNZTLOkJPxbbu5VWo=
 github.com/sirupsen/logrus v1.4.1/go.mod h1:ni0Sbl8bgC9z8RoU9G6nDWqqs/fq4eDPysMBDgk/93Q=
 github.com/sirupsen/logrus v1.4.2/go.mod h1:tLMulIdttU9McNUspp0xgXVQah82FyeX6MwdIuYE2rE=
