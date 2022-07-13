@@ -992,7 +992,13 @@ func (cc *CosmosProvider) RelayPacketFromSequence(ctx context.Context, src, dst 
 
 // MsgRelayInterchainqueryResult constructs the MsgRelayInterchainqueryResult which is to be sent to the querying chain.
 // The counterparty represents the queried chain being queried.
-func (cc *CosmosProvider) MsgRelayInterchainqueryResult(ctx context.Context, src, dst provider.ChainProvider, srch, dsth int64, query icq.PendingICQRequest) (provider.RelayerMessage, error) {
+func (cc *CosmosProvider) MsgRelayInterchainqueryResult(
+	ctx context.Context,
+	src, dst provider.ChainProvider,
+	srch, dsth int64,
+	query icq.PendingICQsRequest,
+) (provider.RelayerMessage, error) {
+
 	var (
 		acc string
 		err error
@@ -1000,29 +1006,52 @@ func (cc *CosmosProvider) MsgRelayInterchainqueryResult(ctx context.Context, src
 	if acc, err = cc.Address(); err != nil {
 		return nil, err
 	}
-	res, height, err := dst.QueryStateABCI(ctx, dsth, query.Path, query.QueryParameters)
+
+	results := []*icq.IndividualResult{}
+
+	latest_height, err := dst.QueryLatestHeight(ctx)
 	if err != nil {
 		return nil, err
+	}
+
+	var client_height clienttypes.Height
+
+	// Iterate through all the queries
+	for _, element := range query.IndividualICQs {
+		// Iterate through all the queries
+		res, abci_height, err := dst.QueryStateABCI(ctx, latest_height, element.Path, element.QueryParameters)
+		if err != nil {
+			return nil, err
+		}
+
+		results = append(
+			results,
+			&icq.IndividualResult{
+				Id:     element.Id,
+				Result: res.Value,
+				Proof:  res.ProofOps,
+			})
+
+		client_height = abci_height
 	}
 
 	switch {
 	case err != nil:
 		return nil, err
 	default:
-		msg := &icq.MsgSubmitICQResult{
-			FromAddress: acc,
-			QueryId:     query.Id,
-			Result:      res.Value,
-			Height:      &height,
-			Proof:       res.ProofOps,
-			PeriodicId:  query.PeriodicId,
+		msg := &icq.MsgSubmitICQResults{
+			FromAddress:       acc,
+			QueryId:           query.Id,
+			IndividualResults: results,
+			Height:            &client_height,
+			PeriodicId:        query.PeriodicId,
 		}
 		return NewCosmosMessage(msg), nil
 	}
 }
 
 // RelayPacketFromInterchainquery relays a query on src and returns msgs, and/or error
-func (cc *CosmosProvider) RelayPacketFromInterchainquery(ctx context.Context, src, dst provider.ChainProvider, srch, dsth uint64, iq icq.PendingICQRequest, dstClientId, srcClientId string) (provider.RelayerMessage, error) {
+func (cc *CosmosProvider) RelayPacketFromInterchainquery(ctx context.Context, src, dst provider.ChainProvider, srch, dsth uint64, iq icq.PendingICQsRequest, dstClientId, srcClientId string) (provider.RelayerMessage, error) {
 
 	if iq.ClientId != srcClientId {
 		return nil, fmt.Errorf("wrong client id for interchainquery %d: expected(%s) got(%s)", iq.Id, iq.ClientId, srcClientId)

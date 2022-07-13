@@ -220,15 +220,15 @@ func (cc *CosmosProvider) QueryStateABCI(ctx context.Context, height int64, path
 }
 
 // QueryInterchainqueries returns a list of all interchainquery requests
-func (cc *CosmosProvider) QueryInterchainqueries(ctx context.Context, height uint64) ([]icq.PendingICQRequest, error) {
+func (cc *CosmosProvider) QueryInterchainqueries(ctx context.Context, height uint64) ([]icq.PendingICQsRequest, error) {
 	qc := icq.NewQueryClient(cc)
-	res, err := qc.PendingICQRequestAll(ctx, &icq.QueryAllPendingICQRequest{
+	res, err := qc.PendingICQsRequestAll(ctx, &icq.QueryAllPendingICQsRequest{
 		Pagination: DefaultPageRequest(),
 	})
 	if err != nil {
 		return nil, err
 	}
-	return res.PendingICQRequest, nil
+	return res.PendingICQsRequest, nil
 }
 
 // QueryClientState retrieves the latest consensus state for a client in state at a given height

@@ -13,7 +13,7 @@ require (
 	github.com/stretchr/testify v1.7.1
 	github.com/tendermint/tendermint v0.34.14
 	golang.org/x/sync v0.0.0-20210220032951-036812b2e83c
-	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b
+	gopkg.in/yaml.v3 v3.0.1
 )
 
 require (
@@ -21,6 +21,7 @@ require (
 	github.com/cosmos/ibc-go/v3 v3.0.0
 	github.com/jsternberg/zap-logfmt v1.2.0
 	github.com/pkg/errors v0.9.1
+	github.com/simplyvc/interchainqueries v0.0.0-20220713150151-2600e7440388
 	github.com/strangelove-ventures/lens v0.3.1-0.20220326181038-f6d1dde7392d
 	go.uber.org/zap v1.21.0
 	golang.org/x/term v0.0.0-20210927222741-03fcf44c2211
@@ -101,7 +102,6 @@ require (
 	github.com/regen-network/cosmos-proto v0.3.1 // indirect
 	github.com/sasha-s/go-deadlock v0.2.1-0.20190427202633-1595213edefa // indirect
 	github.com/sergi/go-diff v1.1.0 // indirect
-	github.com/simplyvc/interchainqueries v0.0.0-20220530083746-3bf9a91ee5d8 // indirect
 	github.com/spf13/afero v1.6.0 // indirect
 	github.com/spf13/cast v1.4.1 // indirect
 	github.com/spf13/jwalterweatherman v1.1.0 // indirect

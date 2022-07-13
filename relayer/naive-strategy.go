@@ -146,11 +146,11 @@ func UnrelayedSequences(ctx context.Context, src, dst *Chain, srcChannel *chanty
 	return rs, nil
 }
 
-func UnrelayedInterchainqueries(ctx context.Context, src, dst *Chain, buffer uint64) ([]icq.PendingICQRequest, error) {
+func UnrelayedInterchainqueries(ctx context.Context, src, dst *Chain, buffer uint64) ([]icq.PendingICQsRequest, error) {
 	var (
-		uniqueInterchainQueries  = map[uint64]icq.PendingICQRequest{}
-		pendingInterchainQueries = []icq.PendingICQRequest{}
-		allInterchainQueries     = []icq.PendingICQRequest{}
+		uniqueInterchainQueries  = map[uint64]icq.PendingICQsRequest{}
+		pendingInterchainQueries = []icq.PendingICQsRequest{}
+		allInterchainQueries     = []icq.PendingICQsRequest{}
 	)
 
 	srch, _, err := QueryLatestHeights(ctx, src, dst)
@@ -499,7 +499,7 @@ func RelayPackets(ctx context.Context, src, dst *Chain, sp *RelaySequences, maxT
 }
 
 // RelayInterchainqueries creates transactions to relay packets from src to dst and from dst to src
-func RelayInterchainqueries(ctx context.Context, src, dst *Chain, iqs []icq.PendingICQRequest, maxTxSize, maxMsgLength uint64) error {
+func RelayInterchainqueries(ctx context.Context, src, dst *Chain, iqs []icq.PendingICQsRequest, maxTxSize, maxMsgLength uint64) error {
 	// set the maximum relay transaction constraints
 	msgs := &RelayInterchainqueryMsgs{
 		Msgs:         []provider.RelayerMessage{},
@@ -600,7 +600,7 @@ func AddMessagesForSequences(ctx context.Context, sequences []uint64, src, dst *
 	return nil
 }
 
-func AddMessagesForInterchainqueries(ctx context.Context, queries []icq.PendingICQRequest, src, dst *Chain, srch, dsth int64, msgs *[]provider.RelayerMessage) error {
+func AddMessagesForInterchainqueries(ctx context.Context, queries []icq.PendingICQsRequest, src, dst *Chain, srch, dsth int64, msgs *[]provider.RelayerMessage) error {
 	for _, query := range queries {
 		var (
 			msg provider.RelayerMessage
